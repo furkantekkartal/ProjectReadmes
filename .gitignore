@@ -1,0 +1,5 @@
+# Internal mission files — never publish (contain infra notes and working data)
+MISSION.md
+recon/
+assets/
+scripts/
