@@ -68,7 +68,7 @@ All screenshots are from the live app in a mobile viewport (390 px) — the UI i
 <img src="images/03-dashboard.png" alt="Dashboard" width="390">
 
 - The home screen greets the user by time of day (*"İyi akşamlar, demo"* — good evening, demo).
-- Two stat cards show the wardrobe size: 7 *Parça* (pieces) and 3 *Kombin* (outfits).
+- Two stat cards show the wardrobe size: 4 *Parça* (pieces) and 2 *Kombin* (outfits).
 - *"Son Eklenen Kıyafetler"* (recently added clothes) is a grid of the latest items — all already cut out from their backgrounds.
 - *"Kombin Önerileri"* (outfit suggestions) is a horizontal row of saved outfit cards.
 - A floating camera button adds a new garment from anywhere; the bottom bar has five tabs: *Ana Sayfa* (home), *Gardırop* (wardrobe), *Kombinlerim* (my outfits), *Dene* (try on), *Profil* (profile).
@@ -77,7 +77,7 @@ All screenshots are from the live app in a mobile viewport (390 px) — the UI i
 
 <img src="images/04-wardrobe.png" alt="Wardrobe grid" width="390">
 
-- The full closet as a photo grid — *"7 / 7 parça"* means all 7 pieces are shown.
+- The full closet as a photo grid — *"4 / 4 parça"* means all 4 pieces are shown.
 - A search bar (*"Kıyafet ara..."* — search clothes) plus category chips with live counts: *Tümü* (all), *Aksesuar* (accessories), *Dış Giyim* (outerwear), *Üst* (tops)...
 - A filter drawer (top-right icon) adds tag and color filters.
 - Every card shows the AI-generated name and category — for example *"Krem Beach baskılı t-shirt"* (cream Beach-print t-shirt), *Üst* (top).
@@ -116,8 +116,8 @@ All screenshots are from the live app in a mobile viewport (390 px) — the UI i
 <img src="images/08-outfit-canvas.png" alt="Outfit canvas builder" width="390">
 
 - The signature builder: a 3:4 canvas where background-free garments behave like stickers.
-- Move each piece with one finger, pinch to resize, and reorder layers — here a necklace is layered over a crop t-shirt and striped shorts.
-- The outfit gets a name (*"Hafta Sonu Gezmesi"* — weekend outing) and an occasion (*"Gezme"* — going out).
+- Move each piece with one finger, pinch to resize, and reorder layers — here the cream Beach t-shirt is composed over petrol green shorts.
+- The outfit gets a name (*"Günlük Kombin"* — daily outfit) and an occasion (*"Günlük"* — casual).
 - *"Kullanılan Kıyafetler (3)"* (used clothes) lists the pieces with quick remove buttons and an *Ekle* (add) picker filtered by category.
 - *Güncelle* (update) saves the composition; the same screen edits existing outfits.
 
@@ -131,7 +131,7 @@ The flagship AI feature. You describe your plan in one sentence, and Claude buil
 
 - *"AI Kombin Önericisi"* (AI outfit recommender) — *"Aklındaki bir cümlede yaz"* (write what's on your mind in one sentence).
 - The gradient card names the model: **Claude Sonnet** analyzes your wardrobe and suggests personalized outfits.
-- Example prompt filled in: *"Hafta sonu arkadaşlarımla kahve içmeye çıkıyorum, rahat ama şık bir kombin önerir misin?"* — "I'm going out for coffee with friends this weekend, can you suggest a casual but stylish outfit?"
+- Example prompt filled in: *"Yarın arkadaşlarımla dışarı çıkıyorum, rahat ve sportif bir kombin önerir misin?"* — "I'm going out with friends tomorrow, can you suggest a casual, sporty outfit?"
 - An optional city field (here *Istanbul*) makes the suggestion weather-aware via OpenWeather.
 - Example sentences below (*"Pikniğe gidiyorum..."* — I'm going on a picnic...) help first-time users.
 
@@ -140,8 +140,8 @@ The flagship AI feature. You describe your plan in one sentence, and Claude buil
 <img src="images/10-ai-result.png" alt="AI recommender result with live weather" width="390">
 
 - The job runs asynchronously; a toast announces *"AI öneri hazır"* (AI suggestion ready).
-- A live weather chip shows the forecast used: **"Karaköy: 23°C, açık"** (23°C, clear).
-- The AI returns three named outfits — the first is *"Sahil Esintisi Kombin"* (Beach Breeze outfit) with full reasoning in Turkish: the cream tones match, and the stone necklace adds enough elegance for a coffee meetup.
+- A live weather chip shows the forecast used: **"Karaköy: 27°C, açık"** (27°C, clear).
+- The AI returns named outfits — the first is *"Sahil Enerjisi Kombini"* (Beach Energy outfit) with full reasoning in Turkish: the cream printed t-shirt and petrol green shorts make an eye-catching, fully casual-sporty look for the outdoors.
 - Every suggestion is composed only of real items from the user's wardrobe, shown as thumbnails.
 - A *"Bu Kombini Kaydet"* (save this outfit) button turns any suggestion into a saved outfit.
 
@@ -172,7 +172,7 @@ Pick a photo of yourself, pick garments, and the AI renders you wearing them.
 <img src="images/13-tryon-result.png" alt="Virtual try-on result" width="390">
 
 - The demo's cream Beach t-shirt is rendered onto the user's own mirror photo — pose, room and lighting are preserved.
-- A toast announces *"Sanal deneme hazır"* (virtual try-on ready); the balance has dropped to $1.96 (~49 tries).
+- A toast announces *"Sanal deneme hazır"* (virtual try-on ready); the balance has dropped to $1.92 (~48 tries).
 - *İndir* (download) saves the image; *Yeni Dene* (try again) starts a new run.
 - *"Geçmiş Denemeler"* (past tries) keeps a history as "photo + garment = result" rows with timestamps and delete.
 
@@ -180,9 +180,9 @@ Pick a photo of yourself, pick garments, and the AI renders you wearing them.
 
 <img src="images/14-stats.png" alt="Statistics" width="390">
 
-- *"İstatistikler"*: totals at the top — 7 *Kıyafet* (clothes), 3 *Kombin* (outfits), 0 *Favori* (favorites).
-- *"Kategori Dağılımı"* (category distribution) draws a bar per category: tops 3, bottoms 2, underwear 1, accessories 1.
-- *"AI Kullanımı (Bu Ay)"* (AI usage this month) counts tagging runs, recommendations and try-ons — and their real total cost ($0.049).
+- *"İstatistikler"*: totals at the top — 4 *Kıyafet* (clothes), 2 *Kombin* (outfits), 0 *Favori* (favorites).
+- *"Kategori Dağılımı"* (category distribution) draws a bar per category: tops 2, bottoms 2.
+- *"AI Kullanımı (Bu Ay)"* (AI usage this month) counts tagging runs, recommendations and try-ons — and their real total cost ($0.097).
 - The cost figure comes straight from the per-call credit accounting in the backend.
 
 ## Activity

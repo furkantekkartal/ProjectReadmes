@@ -68,7 +68,7 @@ Tüm ekran görüntüleri canlı uygulamadan, mobil görünümde (390 px) alınm
 <img src="images/03-dashboard.png" alt="Ana sayfa" width="390">
 
 - Ana ekran kullanıcıyı günün saatine göre selamlar (*"İyi akşamlar, demo"*).
-- İki istatistik kartı gardırobun boyutunu gösterir: 7 *Parça* ve 3 *Kombin*.
+- İki istatistik kartı gardırobun boyutunu gösterir: 4 *Parça* ve 2 *Kombin*.
 - *"Son Eklenen Kıyafetler"* en yeni parçaların ızgarasıdır — hepsinin arka planı çoktan silinmiştir.
 - *"Kombin Önerileri"* kayıtlı kombin kartlarının yatay kaydırılan sırasıdır.
 - Yüzen kamera düğmesi her yerden yeni kıyafet ekler; alt çubukta beş sekme vardır: *Ana Sayfa*, *Gardırop*, *Kombinlerim*, *Dene*, *Profil*.
@@ -77,7 +77,7 @@ Tüm ekran görüntüleri canlı uygulamadan, mobil görünümde (390 px) alınm
 
 <img src="images/04-wardrobe.png" alt="Gardırop ızgarası" width="390">
 
-- Tüm dolap fotoğraf ızgarası olarak — *"7 / 7 parça"* tüm parçaların listelendiğini gösterir.
+- Tüm dolap fotoğraf ızgarası olarak — *"4 / 4 parça"* tüm parçaların listelendiğini gösterir.
 - Arama çubuğu (*"Kıyafet ara..."*) ve canlı sayaçlı kategori çipleri: *Tümü*, *Aksesuar*, *Dış Giyim*, *Üst*...
 - Sağ üstteki filtre çekmecesi etiket ve renk filtreleri ekler.
 - Her kart AI'nın ürettiği ismi ve kategoriyi gösterir — örneğin *"Krem Beach baskılı t-shirt"*, *Üst*.
@@ -116,8 +116,8 @@ Tüm ekran görüntüleri canlı uygulamadan, mobil görünümde (390 px) alınm
 <img src="images/08-outfit-canvas.png" alt="Kombin tuvali editörü" width="390">
 
 - İmza özellik: arka planı silinmiş kıyafetlerin sticker gibi davrandığı 3:4 oranında bir tuval.
-- Her parça tek parmakla taşınır, iki parmakla boyutlandırılır, katman sırası değiştirilir — burada kolye, crop tişört ve çizgili şortun üzerine yerleştirilmiş.
-- Kombine bir isim (*"Hafta Sonu Gezmesi"*) ve etkinlik (*"Gezme"*) verilir.
+- Her parça tek parmakla taşınır, iki parmakla boyutlandırılır, katman sırası değiştirilir — burada krem Beach baskılı tişört, petrol yeşili şortun üzerine yerleştirilmiş.
+- Kombine bir isim (*"Günlük Kombin"*) ve etkinlik (*"Günlük"*) verilir.
 - *"Kullanılan Kıyafetler (3)"* parçaları hızlı silme düğmeleriyle listeler; *Ekle* kategori filtreli seçiciyi açar.
 - *Güncelle* kompozisyonu kaydeder; aynı ekran mevcut kombinleri de düzenler.
 
@@ -131,7 +131,7 @@ Uygulamanın amiral gemisi AI özelliği. Planınızı tek cümleyle anlatırsı
 
 - *"AI Kombin Önericisi"* — *"Aklındaki bir cümlede yaz"*.
 - Gradyan kart modeli belirtir: **Claude Sonnet** gardırobunuzu analiz edip size özel kombin önerir.
-- Örnek istem: *"Hafta sonu arkadaşlarımla kahve içmeye çıkıyorum, rahat ama şık bir kombin önerir misin?"*
+- Örnek istem: *"Yarın arkadaşlarımla dışarı çıkıyorum, rahat ve sportif bir kombin önerir misin?"*
 - İsteğe bağlı şehir alanı (burada *Istanbul*) öneriyi OpenWeather üzerinden hava durumuna duyarlı hale getirir.
 - Alttaki örnek cümleler (*"Pikniğe gidiyorum..."*) ilk kez kullananlara yol gösterir.
 
@@ -140,8 +140,8 @@ Uygulamanın amiral gemisi AI özelliği. Planınızı tek cümleyle anlatırsı
 <img src="images/10-ai-result.png" alt="Canlı hava durumuyla AI önerici sonucu" width="390">
 
 - İş asenkron çalışır; *"AI öneri hazır"* bildirimi düşer.
-- Canlı hava durumu çipi kullanılan tahmini gösterir: **"Karaköy: 23°C, açık"**.
-- AI üç isimli kombin döndürür — ilki *"Sahil Esintisi Kombin"*, tam gerekçesiyle: krem tonların uyumu ve taşlı kolyenin kahve buluşması için yeterli zarafeti sağlaması.
+- Canlı hava durumu çipi kullanılan tahmini gösterir: **"Karaköy: 27°C, açık"**.
+- AI isimli kombinler döndürür — ilki *"Sahil Enerjisi Kombini"*, tam gerekçesiyle: krem baskılı tişört ile petrol yeşili şortun renk kontrastı, açık hava için rahat ve sportif bir görünüm oluşturuyor.
 - Her öneri yalnızca kullanıcının gardırobundaki gerçek parçalardan oluşur ve küçük görsellerle gösterilir.
 - *"Bu Kombini Kaydet"* düğmesi herhangi bir öneriyi kayıtlı kombine dönüştürür.
 
@@ -172,7 +172,7 @@ Kendi fotoğrafınızı seçin, kıyafetleri seçin; AI o kıyafetleri üzeriniz
 <img src="images/13-tryon-result.png" alt="Sanal deneme sonucu" width="390">
 
 - Demo hesabındaki krem Beach tişört, kullanıcının kendi ayna fotoğrafına giydirilmiş — poz, oda ve ışık korunmuş.
-- *"Sanal deneme hazır"* bildirimi düşer; bakiye $1.96'ya inmiştir (~49 hak).
+- *"Sanal deneme hazır"* bildirimi düşer; bakiye $1.92'ye inmiştir (~48 hak).
 - *İndir* görseli kaydeder; *Yeni Dene* yeni bir deneme başlatır.
 - *"Geçmiş Denemeler"* "fotoğraf + kıyafet = sonuç" satırlarıyla, zaman damgalı ve silinebilir bir geçmiş tutar.
 
@@ -180,9 +180,9 @@ Kendi fotoğrafınızı seçin, kıyafetleri seçin; AI o kıyafetleri üzeriniz
 
 <img src="images/14-stats.png" alt="İstatistikler" width="390">
 
-- *"İstatistikler"*: üstte toplamlar — 7 *Kıyafet*, 3 *Kombin*, 0 *Favori*.
-- *"Kategori Dağılımı"* kategori başına bir çubuk çizer: Üst 3, Alt 2, İç Giyim 1, Aksesuar 1.
-- *"AI Kullanımı (Bu Ay)"* etiketleme, öneri ve sanal deneme sayılarını — ve gerçek toplam maliyeti ($0.049) gösterir.
+- *"İstatistikler"*: üstte toplamlar — 4 *Kıyafet*, 2 *Kombin*, 0 *Favori*.
+- *"Kategori Dağılımı"* kategori başına bir çubuk çizer: Üst 2, Alt 2.
+- *"AI Kullanımı (Bu Ay)"* etiketleme, öneri ve sanal deneme sayılarını — ve gerçek toplam maliyeti ($0.097) gösterir.
 - Maliyet rakamı doğrudan backend'deki çağrı başına kredi muhasebesinden gelir.
 
 ## Hareketler
