@@ -16,6 +16,7 @@
 | 🎯 **HomeMadeKahoot** | Gerçek zamanlı çok oyunculu quizlerle Kahoot tarzı İngilizce öğrenme platformu | [Aç](https://homemadekahoot.furkantekkartal.com) | [Türkçe](HomeMadeKahoot/README.tr.md) · [English](HomeMadeKahoot/README.md) |
 | 🔧 **Dükkanım** | Oto tamirhaneleri için yönetim sistemi: araçlar, servis kayıtları, faturalama | [Aç](https://dukkanim.furkantekkartal.com) | [Türkçe](Dukkanim/README.tr.md) · [English](Dukkanim/README.md) |
 | 🏺 **Authentic Bazaar** | Sıfır bağımlılıklı vanilla-JS e-ticaret vitrini (demo mağaza) | [Aç](https://authenticbazaar.furkantekkartal.com) | [Türkçe](AuthenticBazaar/README.tr.md) · [English](AuthenticBazaar/README.md) |
+| 📊 **Deneme Takip Sistemi** | Deneme sınavı takibi: Excel sonuç dosyaları öğrenci bazlı dashboard ve trend grafiklerine dönüşür (giriş korumalı) | [Aç](http://examvisualizer.furkantekkartal.com) | [Türkçe](ExamVisualizer/README.tr.md) · [English](ExamVisualizer/README.md) |
 
 **Demo hesaplar:** Giriş gerektiren her uygulamada kullanıcı adı `demo`, şifre `demo1234`.
 
