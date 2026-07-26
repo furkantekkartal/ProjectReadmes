@@ -1,4 +1,4 @@
-# Betty's Wardrobe
+# Wardrobe
 
 Yapay zekâ destekli dijital gardırop: kıyafetlerinizi fotoğraflayın → AI arka planı silip her parçayı otomatik etiketlesin → sticker tuvalinde kombinler oluşturun → canlı hava durumuyla AI kombin önerileri alın → kıyafetleri kendi fotoğrafınız üzerinde sanal olarak deneyin.
 
@@ -8,7 +8,7 @@ Yapay zekâ destekli dijital gardırop: kıyafetlerinizi fotoğraflayın → AI 
 
 > ### 🚀 Canlı deneyin
 >
-> **URL:** [https://bettyswardrobe.furkantekkartal.com](https://bettyswardrobe.furkantekkartal.com)
+> **URL:** [https://wardrobe.furkantekkartal.com](https://wardrobe.furkantekkartal.com)
 >
 > **Demo giriş:** kullanıcı adı `demo` · şifre `demo1234`
 >
@@ -220,7 +220,7 @@ Kendi fotoğrafınızı seçin, kıyafetleri seçin; AI o kıyafetleri üzeriniz
 - **Ortak PostgreSQL** — veriler ortak bir Postgres örneğinde, ayrı dev ve prod veritabanlarında tutulur; şema migrasyonları backend açılışında otomatik çalışır.
 - **Docker volume üzerinde kullanıcı başına yüklemeler** — orijinal fotoğraflar, arka planı silinmiş kesimler ve deneme sonuçları konteynerlerin dışında, kalıcı bir volume'de kullanıcı bazında saklanır.
 - **AI çağrısı başına kredi muhasebesi** — her sağlayıcı çağrısı (Claude, FASHN/Gemini, arka plan silme) USD olarak fiyatlandırılır ve kullanıcının bakiyesinden düşülür; aylık limitler ve yönetici yüklemeleri vardır.
-- **Nginx arkasında Docker Compose** — ayrı dev ve prod yığınları; reverse proxy `bettyswardrobe.furkantekkartal.com` (prod) ve `bettyswardrobe-dev...` (dev) adreslerini doğru konteynerlere yönlendirir.
+- **Nginx arkasında Docker Compose** — ayrı dev ve prod yığınları; reverse proxy `wardrobe.furkantekkartal.com` (prod) ve `wardrobe-dev...` (dev) adreslerini doğru konteynerlere yönlendirir.
 
 ---
 

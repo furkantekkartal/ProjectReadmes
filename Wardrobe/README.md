@@ -1,4 +1,4 @@
-# Betty's Wardrobe
+# Wardrobe
 
 An AI-powered digital wardrobe: photograph your clothes → the AI removes the background and auto-tags each piece → build outfits on a sticker canvas → get AI outfit recommendations with live weather → try garments on in a virtual try-on with your own photo.
 
@@ -8,7 +8,7 @@ An AI-powered digital wardrobe: photograph your clothes → the AI removes the b
 
 > ### 🚀 Try it live
 >
-> **URL:** [https://bettyswardrobe.furkantekkartal.com](https://bettyswardrobe.furkantekkartal.com)
+> **URL:** [https://wardrobe.furkantekkartal.com](https://wardrobe.furkantekkartal.com)
 >
 > **Demo login:** username `demo` · password `demo1234`
 >
@@ -220,7 +220,7 @@ Pick a photo of yourself, pick garments, and the AI renders you wearing them.
 - **Shared PostgreSQL** — data lives in a shared Postgres instance with separate dev and prod databases; schema migrations run automatically on backend startup.
 - **Per-user uploads on a Docker volume** — original photos, background-removed cutouts and try-on results are stored per user on a persistent volume, outside the containers.
 - **Credit accounting per AI call** — every provider call (Claude, FASHN/Gemini, background removal) is priced in USD and charged against the user's balance, with monthly limits and admin top-ups.
-- **Docker Compose behind Nginx** — separate dev and prod stacks; the reverse proxy routes `bettyswardrobe.furkantekkartal.com` (prod) and `bettyswardrobe-dev...` (dev) to the right containers.
+- **Docker Compose behind Nginx** — separate dev and prod stacks; the reverse proxy routes `wardrobe.furkantekkartal.com` (prod) and `wardrobe-dev...` (dev) to the right containers.
 
 ---
 
