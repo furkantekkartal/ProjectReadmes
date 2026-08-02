@@ -11,7 +11,7 @@ Detailed, screenshot-driven documentation for every application running at [furk
 | Project | What it is | Live app | Docs |
 |---|---|---|---|
 | 🥗 **HealthNHabits** | Health tracker with an AI food scanner: photograph a meal, get calories and macros | [Open](https://healthnhabits.furkantekkartal.com) | [English](HealthNHabits/README.md) · [Türkçe](HealthNHabits/README.tr.md) |
-| 👗 **Wardrobe** | AI digital closet: auto-tagging, outfit canvas, weather-aware suggestions, virtual try-on | [Open](https://wardrobe.furkantekkartal.com) | [English](Wardrobe/README.md) · [Türkçe](Wardrobe/README.tr.md) |
+| 👗 **Wardrobe** | AI digital closet: ghost-mannequin images, auto-tagging, bulk HEIC import, outfit canvas, virtual try-on on a ghost/mannequin/your photo | [Open](https://wardrobe.furkantekkartal.com) | [English](Wardrobe/README.md) · [Türkçe](Wardrobe/README.tr.md) |
 | 🧾 **Receiptly** | Receipt scanner and household expense tracker with AI OCR | [Open](https://receiptly.furkantekkartal.com) | [English](Receiptly/README.md) · [Türkçe](Receiptly/README.tr.md) |
 | 🎯 **HomeMadeKahoot** | Kahoot-style English learning platform with real-time multiplayer quizzes | [Open](https://homemadekahoot.furkantekkartal.com) | [English](HomeMadeKahoot/README.md) · [Türkçe](HomeMadeKahoot/README.tr.md) |
 | 🔧 **Dükkanım** | Management system for Turkish auto repair shops: vehicles, service records, invoicing | [Open](https://dukkanim.furkantekkartal.com) | [English](Dukkanim/README.md) · [Türkçe](Dukkanim/README.tr.md) |

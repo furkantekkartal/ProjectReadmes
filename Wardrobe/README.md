@@ -1,6 +1,6 @@
 # Wardrobe
 
-An AI-powered digital wardrobe: photograph your clothes → the AI removes the background and auto-tags each piece → build outfits on a sticker canvas → get AI outfit recommendations with live weather → try garments on in a virtual try-on with your own photo.
+An AI-powered digital wardrobe. Photograph your clothes → the AI cuts them out, redraws them on an invisible **ghost mannequin** and auto-tags every piece → build outfits on a sticker canvas → try them on a virtual mannequin (or on your own photo) → ask for outfit ideas in one sentence.
 
 🇹🇷 Türkçe versiyon: [README.tr.md](README.tr.md)
 
@@ -18,209 +18,146 @@ An AI-powered digital wardrobe: photograph your clothes → the AI removes the b
 
 ## Features
 
-- **AI auto-tagging (Claude)** — upload one photo and the AI names the garment, picks its category, detects the main and secondary colors, and generates style tags.
-- **Automatic background removal** — every clothing photo is cut out from its background (Photoroom / imgly), so the wardrobe looks like a clean product catalog.
-- **Sticker outfit canvas** — compose outfits by dragging the cut-out garments on a canvas: one-finger drag, pinch to scale, layer controls.
-- **Natural-language outfit recommender** — write one sentence ("I'm meeting friends for coffee...") and Claude suggests complete outfits from your own wardrobe, with reasoning, aware of the live weather in your city (OpenWeather).
-- **Virtual try-on** — pick a photo of yourself, pick garments, pick an AI model (FASHN / Gemini), and see the clothes rendered on you.
-- **Per-user AI credit system** — every AI call has a real USD price; each user has a credit balance and a monthly limit.
+- **Ghost mannequin images** — every garment gets an AI-generated "worn by nobody" version: the piece is cut out of the original photo and redrawn with volume and shape, as in a product catalogue. The original photo is never thrown away; one tap switches back to it.
+- **AI auto-tagging (Claude)** — one photo is enough: the AI names the garment, picks category and subcategory, detects the main and secondary colours and generates style tags.
+- **Bulk import with HEIC support** — drop hundreds of photos at once. iPhone `.HEIC` files are converted to JPEG **in the browser** and shrunk before upload; everything lands in a draft area and only enters the wardrobe once you approve it.
+- **Sticker outfit canvas** — compose outfits by dragging the cut-outs: one-finger drag, pinch to scale, layer controls.
+- **Virtual try-on with three bases** — try clothes on an invisible **ghost** mannequin, on a **virtual mannequin** (male/female), or on **your own photo**.
+- **Outfit ⇄ try-on link** — an outfit can be sent straight into the try-on cabin, and the generated image is written back onto that same outfit. You then pick which one is the cover: the canvas or the mannequin.
+- **Natural-language outfit recommender** — write one sentence ("I'm meeting friends for coffee…") and Claude suggests complete outfits from the clothes you actually own, with reasoning and live weather awareness.
+- **Per-user AI credit system** — every AI call has a real USD price, charged against the user's balance with a monthly cap.
 - **Invite-only access with admin tools** — admins mint single-use invite codes and top up user credits.
-- **Built-in observability** — stats, an activity timeline, and a live log viewer right inside the app.
 
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Frontend | React 19, Vite 7, Tailwind CSS 4, React Router 7 |
-| Backend | Node.js 20, Express 4, async AI job workers |
+| Frontend | React 19, Vite 7, Tailwind CSS 4, React Router |
+| Backend | Node.js 20, Express 4, async AI job workers with a concurrency limit |
 | Database | PostgreSQL (shared instance, separate dev/prod databases) |
 | Auth | JWT, invite-gated registration |
-| AI — tagging & outfits | Claude Sonnet |
-| AI — virtual try-on | FASHN / Gemini (via OpenRouter) |
-| AI — background removal | Photoroom / imgly |
+| AI — tagging & outfit ideas | Claude Sonnet |
+| AI — ghost mannequin & try-on | Gemini image models (via OpenRouter) |
+| AI — background removal | PhotoRoom, with a local IMG.LY fallback |
 | Weather | OpenWeather |
 | Deployment | Docker Compose behind an Nginx reverse proxy |
 
 ## Screens
 
-All screenshots are from the live app in a mobile viewport (390 px) — the UI is designed mobile-first. The interface is in Turkish, as this is an app for the Turkish market; each section below translates the key labels.
+All screenshots are from the live app in a mobile viewport (390 px) — the UI is mobile-first. The interface is in Turkish; each section translates the key labels.
 
-## Login
+## Login & Register
 
-<img src="images/01-login.png" alt="Login screen" width="390">
+<img src="images/01-login.png" alt="Login screen" width="300"> <img src="images/02-register.png" alt="Register screen" width="300">
 
-- Pink-branded sign-in screen with the app logo and the tagline *"Akıllı dijital gardırop"* (smart digital wardrobe).
-- You can log in with a username **or** an email address, plus a password.
-- The link at the bottom asks *"Davet kodun var mı?"* — "Do you have an invite code?" — and leads to registration.
-- Sessions use JWT tokens; logged-in users are redirected straight to the dashboard.
-
-## Register
-
-<img src="images/02-register.png" alt="Register screen" width="390">
-
-- *"Hesap Oluştur"* (Create account) — registration is invite-only: the first field is the invite code (*Davet Kodu*, format `XXXX-XXXX`).
-- The code is checked live against the server; only valid, unused codes pass.
-- The rest is standard: full name, username, email, and a password of at least 6 characters.
-- Invite codes are single-use and can only be created by an admin, which keeps the app private.
+- Sign in with a username **or** an email address; sessions use JWT tokens.
+- *"Hesap Oluştur"* (create account) is invite-only: the first field is the invite code (*Davet Kodu*), checked live against the server. Codes are single-use and only admins can mint them, which keeps the app private.
 
 ## Dashboard
 
 <img src="images/03-dashboard.png" alt="Dashboard" width="390">
 
-- The home screen greets the user by time of day (*"İyi akşamlar, demo"* — good evening, demo).
-- Two stat cards show the wardrobe size: 4 *Parça* (pieces) and 2 *Kombin* (outfits).
-- *"Son Eklenen Kıyafetler"* (recently added clothes) is a grid of the latest items — all already cut out from their backgrounds.
-- *"Kombin Önerileri"* (outfit suggestions) is a horizontal row of saved outfit cards.
-- A floating camera button adds a new garment from anywhere; the bottom bar has five tabs: *Ana Sayfa* (home), *Gardırop* (wardrobe), *Kombinlerim* (my outfits), *Dene* (try on), *Profil* (profile).
+- A greeting by time of day, then the two numbers that matter: **68 *parça*** (pieces) and **2 *kombin*** (outfits).
+- *"Son Eklenenler"* (recently added) is a grid of the newest pieces — all shown as ghost-mannequin cut-outs.
+- *"Kombinler"* (outfits) is a row of saved outfit cards.
+- The floating camera button adds a garment from anywhere; the bottom bar has five tabs: *Ana Sayfa* (home), *Gardırop* (wardrobe), *Kombinlerim* (my outfits), *Dene* (try on), *Profil* (profile).
 
 ## Wardrobe
 
 <img src="images/04-wardrobe.png" alt="Wardrobe grid" width="390">
 
-- The full closet as a photo grid — *"4 / 4 parça"* means all 4 pieces are shown.
-- A search bar (*"Kıyafet ara..."* — search clothes) plus category chips with live counts: *Tümü* (all), *Aksesuar* (accessories), *Dış Giyim* (outerwear), *Üst* (tops)...
-- A filter drawer (top-right icon) adds tag and color filters.
-- Every card shows the AI-generated name and category — for example *"Krem Beach baskılı t-shirt"* (cream Beach-print t-shirt), *Üst* (top).
+- The whole closet as a catalogue-style grid — *"68 / 68 parça"* means every piece is currently shown.
+- Search (*"Kıyafet ara…"*) plus category chips with live counts: *Tümü* (all), *Aksesuar* (accessories), *Dış Giyim* (outerwear), *Üst* (tops)… The filter drawer adds tag and colour filters.
+- The little cart icon on each card drops the piece into the **try-on cabin**, so you can collect items while browsing and try them all at once.
+- Filters and scroll position survive navigation: open a garment, come back, and you are exactly where you left off.
 
 ## Clothing Detail
 
-<img src="images/05-clothing-detail.png" alt="Clothing detail with AI tags" width="390">
+<img src="images/05-clothing-detail.png" alt="Clothing detail with ghost mannequin" width="390">
 
 - The garment is shown on a transparent checkerboard — proof of the automatic background removal.
-- The name and category come from the AI and can be edited inline.
-- *Etiketler* (tags) are AI-generated style chips — here *Rahat* (casual), *Plaj* (beach), *Yaz* (summer), *İlkbahar* (spring), *Renkli* (colorful) — with add/remove and an *"AI ile Yeniden Etiketle"* (re-tag with AI) button.
-- *Renkler* (colors): the AI detected the main color *Krem* (cream) and secondary color swatches.
-- Extra actions: *"Arka planı sil"* (remove background) and *"AI etiketle"* (AI tag) can be re-run on demand.
+- The toggle under the image switches between *Ghost mannequin* (the AI-redrawn version, used everywhere in the app) and *Orijinal fotoğraf* (the photo you actually took). **The original is always kept.**
+- *"Görseli yeniden üret"* (regenerate image) runs the ghost-mannequin generation again if the first result is not good enough.
+- Name, category and subcategory come from the AI and are editable inline; *Renk* shows the detected main and secondary colours; below them sit the AI-generated style tags.
 
 ## Add Clothing
 
-<img src="images/06-clothing-add.png" alt="Add clothing" width="390">
+<img src="images/06-clothing-add.png" alt="Add clothing" width="300"> <img src="images/07-bulk-add.png" alt="Bulk add" width="300">
 
-- *"Kıyafet Ekle"* (add clothing): take a photo or pick one from the gallery.
-- The hint says it best: *"Düz arka planda, tek bir kıyafet fotoğrafı. AI otomatik etiketleyecek."* — one garment on a plain background; the AI will tag it automatically.
-- Uploading starts an async pipeline: photo compression → background removal → Claude garment analysis → tag generation.
-- The job runs in the background on the server; the UI animates through the stages and the finished item lands in the wardrobe.
+- **Single add** (*"Kıyafet Ekle"*): take a photo or pick one from the gallery. Uploading starts an async pipeline — compression → background removal → ghost mannequin → Claude analysis → tags — and the UI animates through the real server-side stages.
+- **Bulk add** (*"Toplu Ekle"*): *"Yüzlerce fotoğraf olabilir. iPhone HEIC dosyaları tarayıcıda otomatik JPEG'e çevrilip küçültülür. Hepsi taslak olarak eklenir; onaylayana kadar gardıropta görünmez."* — hundreds of photos at a time, HEIC converted in the browser, everything queued as drafts.
+- The *İncele* (review) tab shows the drafts as a grid. The AI flags cut-outs it is not happy with, so you only hand-check the problematic ones instead of all 200.
+- The banner tracks the remaining PhotoRoom quota, because background removal is a paid API.
 
-## Outfits
+## Outfit Builder
 
-<img src="images/07-outfits.png" alt="Outfits list" width="390">
+<img src="images/09-outfit-builder.png" alt="Outfit canvas before try-on" width="300"> <img src="images/15-outfit-cover-choice.png" alt="Outfit with mannequin try-on" width="300">
 
-- *"Kombinlerim"* (my outfits) lists saved outfits as collage cards built from the cut-out garments.
-- Each card shows the outfit name, piece count and an occasion label — *Günlük* (everyday), *Özel gün* (special day).
-- Filter between *Tümü* (all) and *Favoriler* (favorites); the heart on each card toggles favorite status.
-- Search works on both outfit names and occasions.
-- The **+** button opens the canvas builder; the sparkle button jumps to the AI recommender.
+- A 3:4 canvas where the cut-outs behave like stickers: drag with one finger, pinch to resize, reorder layers.
+- **Left:** *Tuval* (canvas) is the cover and the *Manken* (mannequin) slot is still empty — *"Henüz denenmedi / Dokun ve dene"* (not tried yet, tap to try).
+- **Right:** after a try-on, both versions live side by side and *"Ana görsel yap"* (make it the cover) decides which one represents the outfit in lists. The other one stays visible on this page.
+- *"Kullanılan Kıyafetler"* (used pieces) lists the garments with quick remove and an *Ekle* (add) picker.
+- The bottom bar has *Dene* (try on) and *Güncelle* (update) — the try-on button carries this exact outfit into the cabin.
 
-## Outfit Canvas
+<img src="images/16-outfits-covers.png" alt="Outfit list with mixed covers" width="390">
 
-<img src="images/08-outfit-canvas.png" alt="Outfit canvas builder" width="390">
-
-- The signature builder: a 3:4 canvas where background-free garments behave like stickers.
-- Move each piece with one finger, pinch to resize, and reorder layers — here the cream Beach t-shirt is composed over petrol green shorts.
-- The outfit gets a name (*"Günlük Kombin"* — daily outfit) and an occasion (*"Günlük"* — casual).
-- *"Kullanılan Kıyafetler (3)"* (used clothes) lists the pieces with quick remove buttons and an *Ekle* (add) picker filtered by category.
-- *Güncelle* (update) saves the composition; the same screen edits existing outfits.
-
-## AI Outfit Recommender
-
-The flagship AI feature. You describe your plan in one sentence, and Claude builds outfits from the clothes you actually own.
-
-### 1. Input
-
-<img src="images/09-ai-input.png" alt="AI recommender input" width="390">
-
-- *"AI Kombin Önericisi"* (AI outfit recommender) — *"Aklındaki bir cümlede yaz"* (write what's on your mind in one sentence).
-- The gradient card names the model: **Claude Sonnet** analyzes your wardrobe and suggests personalized outfits.
-- Example prompt filled in: *"Yarın arkadaşlarımla dışarı çıkıyorum, rahat ve sportif bir kombin önerir misin?"* — "I'm going out with friends tomorrow, can you suggest a casual, sporty outfit?"
-- An optional city field (here *Istanbul*) makes the suggestion weather-aware via OpenWeather.
-- Example sentences below (*"Pikniğe gidiyorum..."* — I'm going on a picnic...) help first-time users.
-
-### 2. Result
-
-<img src="images/10-ai-result.png" alt="AI recommender result with live weather" width="390">
-
-- The job runs asynchronously; a toast announces *"AI öneri hazır"* (AI suggestion ready).
-- A live weather chip shows the forecast used: **"Karaköy: 27°C, açık"** (27°C, clear).
-- The AI returns named outfits — the first is *"Sahil Enerjisi Kombini"* (Beach Energy outfit) with full reasoning in Turkish: the cream printed t-shirt and petrol green shorts make an eye-catching, fully casual-sporty look for the outdoors.
-- Every suggestion is composed only of real items from the user's wardrobe, shown as thumbnails.
-- A *"Bu Kombini Kaydet"* (save this outfit) button turns any suggestion into a saved outfit.
+In *Kombinlerim* the two cover types sit next to each other: one outfit shows its mannequin photo, the other its canvas collage.
 
 ## Virtual Try-On
 
-Pick a photo of yourself, pick garments, and the AI renders you wearing them.
+Three different bases — this is the heart of the app.
 
-### 1. Setup
+### 1. The cabin
 
-<img src="images/11-tryon.png" alt="Virtual try-on setup" width="390">
+<img src="images/10-tryon-cabin.png" alt="Try-on cabin" width="390">
 
-- *"Sanal Deneme"* (virtual try-on) — the header shows the credit balance: *"Bakiye: $2.00 • ~50 deneme hakkı"* (balance $2.00, about 50 tries left).
-- Step 1: choose one of your own body photos (*"Fotoğrafını seç"*).
-- Step 2: choose the garments to try (*"Denemek istediğin kıyafetler"*) — multiple selection is allowed (top + bottom), and each extra garment costs one extra try.
-- Step 3: choose the AI model — *Gemini 2.5 Flash* is the default (*Varsayılan*), "fast and economical" at $0.040 per try.
+- *"Sanal Deneme"* — the header shows the spendable balance and roughly how many tries are left.
+- Step 1, *"Kimin üzerinde denensin?"* (on whom?): **Ghost** (invisible mannequin), **Fotoğrafım** (my photo), **Manken** (virtual mannequin).
+- Step 2 lists the garments collected in the cabin; *"Tek kombin olarak dene"* renders them as one look in a single API call.
+- Step 3 lets you pick the image model with transparent per-call pricing, and the estimated cost is shown before you start.
 
-### 2. In Progress
+### 2. Ghost mannequin result
 
-<img src="images/12-tryon-progress.png" alt="Virtual try-on in progress" width="390">
+<img src="images/11-tryon-progress.png" alt="Try-on in progress" width="300"> <img src="images/12-tryon-ghost-result.png" alt="Ghost mannequin try-on result" width="300">
 
-- The model list with transparent pricing: Gemini 2.5 Flash $0.040, Gemini 3.1 Flash $0.070, Gemini 3 Pro Image $0.150 ("highest quality"), ChatGPT Image $0.120.
-- *"Tahmini maliyet"* (estimated cost) is calculated before you start: $0.040 for 1 garment.
-- The job runs in the background — the purple banner says *"1 işlem arka planda çalışıyor"* (1 job running in the background).
-- You can leave the page and keep using the app; a notification arrives when the result is ready.
+- The job runs on the server; a banner shows *"1 işlem arka planda"* (1 job in the background) and you can keep using the app while it renders.
+- The result is the shirt and trousers worn by **nobody** — a floating, correctly draped outfit. The film strip below keeps every input frame plus the *Sonuç* (result), so you can compare.
 
-### 3. Result
+### 3. Virtual mannequin result
 
-<img src="images/13-tryon-result.png" alt="Virtual try-on result" width="390">
+<img src="images/13-tryon-mannequin-select.png" alt="Mannequin selection" width="300"> <img src="images/14-tryon-mannequin-result.png" alt="Mannequin try-on result" width="300">
 
-- The demo's cream Beach t-shirt is rendered onto the user's own mirror photo — pose, room and lighting are preserved.
-- A toast announces *"Sanal deneme hazır"* (virtual try-on ready); the balance has dropped to $1.92 (~48 tries).
-- *İndir* (download) saves the image; *Yeni Dene* (try again) starts a new run.
-- *"Geçmiş Denemeler"* (past tries) keeps a history as "photo + garment = result" rows with timestamps and delete.
+- Under the *Manken* tab you choose a *Kadın* (female) or *Erkek* (male) mannequin, and the same outfit is rendered on that body.
+- Because this try-on was started from an outfit, the button says *"Kombine işle"* (write back into the outfit): the image is saved onto that outfit instead of creating a duplicate.
+- The third option, *Fotoğrafım*, does the same thing with a photo of yourself.
 
-## Statistics
+## AI Outfit Recommender
 
-<img src="images/14-stats.png" alt="Statistics" width="390">
+<img src="images/17-ai-input.png" alt="AI recommender input" width="300"> <img src="images/18-ai-result.png" alt="AI recommender result" width="300">
 
-- *"İstatistikler"*: totals at the top — 4 *Kıyafet* (clothes), 2 *Kombin* (outfits), 0 *Favori* (favorites).
-- *"Kategori Dağılımı"* (category distribution) draws a bar per category: tops 2, bottoms 2.
-- *"AI Kullanımı (Bu Ay)"* (AI usage this month) counts tagging runs, recommendations and try-ons — and their real total cost ($0.097).
-- The cost figure comes straight from the per-call credit accounting in the backend.
+- Describe your plan in one sentence — here: *"I'm going out for coffee with friends this weekend, can you suggest something comfortable but stylish?"*
+- The optional city field makes the suggestion weather-aware via OpenWeather.
+- Claude answers with named outfits — *"Şık Kahve Buluşması Kombini"* (stylish coffee-meeting outfit) — explains **why** those pieces work together, and composes them **only** from clothes that are actually in your wardrobe.
+- *"Bu Kombini Kaydet"* turns any suggestion into a saved outfit you can then edit on the canvas or try on.
+- Full-page capture with all suggestions: [18b-ai-result-full.png](images/18b-ai-result-full.png)
 
-## Activity
+## Statistics, Activity & Profile
 
-<img src="images/15-activity.png" alt="Activity timeline" width="390">
+<img src="images/19-stats.png" alt="Statistics" width="260"> <img src="images/20-activity.png" alt="Activity timeline" width="260"> <img src="images/21-profile.png" alt="Profile" width="260">
 
-- *"Hareketler"* (activity) is a date-grouped timeline of everything that happened in the account.
-- Event types include *"Sanal deneme yapıldı"* (virtual try-on done), *"AI kombin önerisi istendi"* (AI outfit suggestion requested) and *"... gardıroba eklendi"* (... added to the wardrobe).
-- Events carry image thumbnails that open in a lightbox — you can see exactly which garment or result each entry refers to.
-- Timestamps make it easy to retrace a whole session.
-
-## Logs
-
-<img src="images/16-logs.png" alt="Log viewer" width="390">
-
-- *"Loglar"* — a real log viewer inside the app, useful for a solo developer running AI pipelines in production.
-- Filter by level (*error / warn / info / debug*) and by source (*http, fashn, claude, photoroom...*).
-- The entries show real pipeline telemetry — for example `claude recommend.success 9937ms outfits=3` (the recommendation call took ~10 s and returned 3 outfits).
-- Regular users see their own logs; admins can switch the scope to all users.
-
-## Profile
-
-<img src="images/17-profile.png" alt="Profile" width="390">
-
-- The user card shows the avatar, display name and handle (*demo @demo*).
-- Quick links lead to *İstatistikler* (statistics), *Hareketler* (activity) and *Hata Logları* (error logs).
-- *"AI Bakiyem (OpenRouter)"* (my AI balance) is the credit dashboard: $3.46 left, $10.00 loaded in total, $6.544 spent, and a monthly limit of $3.00.
-- *"Çıkış Yap"* logs out.
-- Admin accounts see extra sections here (not visible on the demo account): creating and sharing invite codes, and topping up other users' AI credits.
+- **İstatistikler** — totals, a bar per category (*Üst* 36, *Alt* 24, *Dış Giyim* 5…) and this month's AI usage with its real cost.
+- **Hareketler** — a date-grouped timeline of everything that happened: pieces added, try-ons rendered, recommendations requested, each with a thumbnail that opens in a lightbox.
+- **Profil** — the credit dashboard: spendable balance, account balance, monthly cap, total loaded and total spent, plus a per-provider breakdown of what this app has spent. Admin accounts also get invite-code creation and credit top-ups here.
 
 ## Architecture
 
-- **Mobile-first SPA** — a React single-page app with a phone-width layout and a bottom tab bar, served by Nginx.
-- **REST API + async job polling** — the Express backend exposes JSON endpoints; slow AI work (tagging, recommendations, try-on) runs as background jobs, and the frontend polls until a "ready" toast appears. The user can keep navigating while a job runs.
-- **Shared PostgreSQL** — data lives in a shared Postgres instance with separate dev and prod databases; schema migrations run automatically on backend startup.
-- **Per-user uploads on a Docker volume** — original photos, background-removed cutouts and try-on results are stored per user on a persistent volume, outside the containers.
-- **Credit accounting per AI call** — every provider call (Claude, FASHN/Gemini, background removal) is priced in USD and charged against the user's balance, with monthly limits and admin top-ups.
-- **Docker Compose behind Nginx** — separate dev and prod stacks; the reverse proxy routes `wardrobe.furkantekkartal.com` (prod) and `wardrobe-dev...` (dev) to the right containers.
+- **Mobile-first SPA** — a React single-page app with a phone-width layout and a bottom tab bar, served by Nginx. Scroll position and filters are restored when you navigate back, so long lists never jump to the top.
+- **REST API + async job polling** — the Express backend exposes JSON endpoints; slow AI work (tagging, ghost mannequin, recommendations, try-on) runs as background jobs with a concurrency limit, so a 200-photo import cannot flood the machine. The frontend polls until a "ready" toast appears.
+- **Two images per garment, forever** — the original photo and the ghost-mannequin render are both stored; the app shows the ghost version but the original can always be brought back or re-rendered.
+- **Shared PostgreSQL** — separate dev and prod databases on one instance; schema migrations run automatically on backend startup.
+- **Per-user uploads on a Docker volume** — originals, cut-outs and try-on results are stored per user on a persistent volume, outside the containers.
+- **Credit accounting per AI call** — every provider call is priced in USD and charged against the user's balance, with monthly limits and admin top-ups.
+- **Docker Compose behind Nginx** — separate dev and prod stacks; the reverse proxy routes `wardrobe.furkantekkartal.com` (prod) and `wardrobe-dev.furkantekkartal.com` (dev) to the right containers.
 
 ---
 

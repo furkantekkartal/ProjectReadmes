@@ -11,7 +11,7 @@
 | Proje | Nedir | Canlı uygulama | Dokümanlar |
 |---|---|---|---|
 | 🥗 **HealthNHabits** | Yapay zekâlı yemek tarayıcısına sahip sağlık takibi: yemeğin fotoğrafını çek, kalori ve makroları al | [Aç](https://healthnhabits.furkantekkartal.com) | [Türkçe](HealthNHabits/README.tr.md) · [English](HealthNHabits/README.md) |
-| 👗 **Wardrobe** | Yapay zekâlı dijital gardırop: otomatik etiketleme, kombin kanvası, hava durumuna göre öneri, sanal deneme | [Aç](https://wardrobe.furkantekkartal.com) | [Türkçe](Wardrobe/README.tr.md) · [English](Wardrobe/README.md) |
+| 👗 **Wardrobe** | Yapay zekâlı dijital gardırop: ghost mannequin görselleri, otomatik etiketleme, HEIC destekli toplu ekleme, kombin tuvali, ghost/manken/kendi fotoğrafın üzerinde sanal deneme | [Aç](https://wardrobe.furkantekkartal.com) | [Türkçe](Wardrobe/README.tr.md) · [English](Wardrobe/README.md) |
 | 🧾 **Receiptly** | Yapay zekâ OCR'lı fiş tarama ve ev bütçesi takibi | [Aç](https://receiptly.furkantekkartal.com) | [Türkçe](Receiptly/README.tr.md) · [English](Receiptly/README.md) |
 | 🎯 **HomeMadeKahoot** | Gerçek zamanlı çok oyunculu quizlerle Kahoot tarzı İngilizce öğrenme platformu | [Aç](https://homemadekahoot.furkantekkartal.com) | [Türkçe](HomeMadeKahoot/README.tr.md) · [English](HomeMadeKahoot/README.md) |
 | 🔧 **Dükkanım** | Oto tamirhaneleri için yönetim sistemi: araçlar, servis kayıtları, faturalama | [Aç](https://dukkanim.furkantekkartal.com) | [Türkçe](Dukkanim/README.tr.md) · [English](Dukkanim/README.md) |
