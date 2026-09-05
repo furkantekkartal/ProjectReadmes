@@ -17,6 +17,7 @@
 | 🔧 **Dükkanım** | Oto tamirhaneleri için yönetim sistemi: araçlar, servis kayıtları, faturalama | [Aç](https://dukkanim.furkantekkartal.com) | [Türkçe](Dukkanim/README.tr.md) · [English](Dukkanim/README.md) |
 | 🏺 **Authentic Bazaar** | Sıfır bağımlılıklı vanilla-JS e-ticaret vitrini (demo mağaza) | [Aç](https://authenticbazaar.furkantekkartal.com) | [Türkçe](AuthenticBazaar/README.tr.md) · [English](AuthenticBazaar/README.md) |
 | 📊 **Deneme Takip Sistemi** | Deneme sınavı takibi: Excel sonuç dosyaları öğrenci bazlı dashboard ve trend grafiklerine dönüşür (giriş korumalı) | [Aç](http://examvisualizer.furkantekkartal.com) | [Türkçe](ExamVisualizer/README.tr.md) · [English](ExamVisualizer/README.md) |
+| 🚗 **NSW Sürüş Testi** | NSW sürücü sınavı kılavuzu: 32 animasyonlu Türkçe ders, sayfaya gömülü sesli anlatım, skor kağıdı okuyucu ve 15 soruluk sınav | [Aç](https://surus.furkantekkartal.com) | [English](SurusTesti/README.md) · [Türkçe](SurusTesti/README.tr.md) |
 
 **Demo hesaplar:** Giriş gerektiren her uygulamada kullanıcı adı `demo`, şifre `demo1234`.
 

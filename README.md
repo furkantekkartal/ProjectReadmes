@@ -17,6 +17,7 @@ Detailed, screenshot-driven documentation for every application running at [furk
 | 🔧 **Dükkanım** | Management system for Turkish auto repair shops: vehicles, service records, invoicing | [Open](https://dukkanim.furkantekkartal.com) | [English](Dukkanim/README.md) · [Türkçe](Dukkanim/README.tr.md) |
 | 🏺 **Authentic Bazaar** | Zero-dependency vanilla-JS e-commerce storefront (demo shop) | [Open](https://authenticbazaar.furkantekkartal.com) | [English](AuthenticBazaar/README.md) · [Türkçe](AuthenticBazaar/README.tr.md) |
 | 📊 **Exam Visualizer** | Mock-exam tracking: Excel result sheets become per-student dashboards and trend charts (login protected) | [Open](http://examvisualizer.furkantekkartal.com) | [English](ExamVisualizer/README.md) · [Türkçe](ExamVisualizer/README.tr.md) |
+| 🚗 **NSW Sürüş Testi** | Transport for NSW's driving-test guide as 32 animated Turkish lessons with narration baked into the page, plus a score-sheet reader and a 15-question exam | [Open](https://surus.furkantekkartal.com) | [English](SurusTesti/README.md) · [Türkçe](SurusTesti/README.tr.md) |
 
 **Demo accounts:** every app that needs a login accepts username `demo`, password `demo1234`.
 
