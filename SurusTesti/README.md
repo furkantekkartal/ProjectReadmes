@@ -18,7 +18,7 @@ Transport for NSW's official 48-page **A Guide to the Driving Test** rebuilt as 
 
 The official guide is 48 pages of English prose. Most of what it says is spatial — where to look, how far to stop, which way to turn your head — and prose is the wrong medium for that. This page turns each rule into a small animated scene and reads it out loud in Turkish.
 
-It also answers the question the book never does: *"I failed. Which of these 19 things did I actually do?"*
+It also answers the question the book never does: *"Which of these 19 things am I weakest on, and what should I practise first?"*
 
 ## Features
 
@@ -69,8 +69,6 @@ Each lesson pairs an animated scene with the rule, the measurements that matter,
 ---
 
 ## Notes
-
-The live page also has a **personal section** that reads your own score sheets and produces a study plan from them. It is intentionally left out of these screenshots — it contains real test results.
 
 This page is a Turkish summary of the official guide, **not an official document**. Where rules change, [nsw.gov.au](https://www.nsw.gov.au) and the Road User Handbook are what count.
 

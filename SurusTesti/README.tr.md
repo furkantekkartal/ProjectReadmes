@@ -18,7 +18,7 @@ Transport for NSW'nin resmî 48 sayfalık **A Guide to the Driving Test** kitab�
 
 Resmî kılavuz 48 sayfa İngilizce düz metin. Anlattığı şeylerin çoğu **mekânsal**: nereye bakacaksın, kaç metrede duracaksın, kafanı ne tarafa çevireceksin. Düz metin bunun için yanlış araç. Bu sayfa her kuralı küçük bir animasyona çeviriyor ve Türkçe sesli anlatıyor.
 
-Bir de kitabın hiç cevaplamadığı soruyu cevaplıyor: *"Kaldım. Bu 19 maddeden hangisini yaptım ki?"*
+Bir de kitabın hiç cevaplamadığı soruyu cevaplıyor: *"Bu 19 maddeden hangisinde zayıfım, önce neye çalışmalıyım?"*
 
 ## Özellikler
 
@@ -69,8 +69,6 @@ Her ders bir animasyonlu sahneyi kuralın kendisiyle, önemli ölçülerle ve �
 ---
 
 ## Notlar
-
-Canlı sayfada ayrıca **kişiye özel bir bölüm** var: kendi skor kağıtlarınızı okuyup size çalışma planı çıkarıyor. Gerçek sınav sonuçları içerdiği için bu ekran görüntülerine bilerek dahil edilmedi.
 
 Bu sayfa resmî kılavuzun Türkçe özetidir, **resmî bir belge değildir**. Kural değişikliklerinde [nsw.gov.au](https://www.nsw.gov.au) ve Road User Handbook geçerlidir.
 
