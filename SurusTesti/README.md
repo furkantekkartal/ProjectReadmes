@@ -23,7 +23,7 @@ It also answers the question the book never does: *"Which of these 19 things am 
 ## Features
 
 - **32 animated lessons** — each rule is a small SVG scene: the car creeps, the head checks the blind spot, the indicator blinks, the gap closes. Grouped into 8 chapters, navigable by keyboard (`←` `→`, `Space` to speak).
-- **Narration for every lesson** — Turkish audio generated with espeak-ng, one MP3 per lesson. If the device *has* a Turkish voice the browser uses it; if not, the prepared track plays instead.
+- **Narration for every lesson** — Turkish audio rendered ahead of time with a neural voice, one MP3 per lesson. Because it is baked into files at build time, it sounds **identical on every device** — no dependency on the browser's speech engine.
 - **The 19 fail items** — the binary rules that end a test regardless of score, each with the concrete behaviour that triggers it.
 - **Termination reasons** — the checks that end the test *before* it starts (unroadworthy car, missing paperwork), which are refunded to nobody.
 - **Score sheet reader** — the Class C sheet (Form 1408) is a grid of letters. Tap a letter to learn what the examiner meant by circling it.
@@ -38,7 +38,7 @@ It also answers the question the book never does: *"Which of these 19 things am 
 |---|---|
 | Page | One static HTML file — no framework, no build step |
 | Graphics | Hand-authored inline SVG with CSS keyframe animation |
-| Narration | espeak-ng (Turkish), one MP3 per lesson; Web Speech API when a local voice exists |
+| Narration | Neural Turkish TTS (edge-tts), one pre-rendered MP3 per lesson |
 | Video | 26 silent clips cut with ffmpeg from Transport for NSW's official videos |
 | Serving | nginx:alpine in Docker, behind the FTcom nginx gateway |
 | Deployment | Docker Compose, production only |
