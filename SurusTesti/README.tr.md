@@ -1,6 +1,6 @@
 # NSW Sürüş Testi
 
-Transport for NSW'nin resmî 48 sayfalık **A Guide to the Driving Test** kitabı, Türkçe ve animasyonlu tek sayfa hâline getirildi. 32 ders, her biri kendi SVG sahnesi ve sesli anlatımıyla — üstelik anlatım **sayfanın içine gömülü**, yani cihazda Türkçe ses paketi kurulu olmasa bile konuşuyor.
+Transport for NSW'nin resmî 48 sayfalık **A Guide to the Driving Test** kitabı, Türkçe ve animasyonlu tek sayfa hâline getirildi. 51 ders: 26'sı Transport for NSW'nin resmî videolarından kırpılmış sessiz döngüler, 25'i kendi SVG sahnesi. Hepsinin Türkçe sesli anlatımı var, cihazda Türkçe ses paketi kurulu olmasa bile konuşuyor.
 
 🇬🇧 English version: [README.md](README.md)
 
@@ -22,8 +22,8 @@ Bir de kitabın hiç cevaplamadığı soruyu cevaplıyor: *"Bu 19 maddeden hangi
 
 ## Özellikler
 
-- **32 animasyonlu ders** — her kural küçük bir SVG sahnesi: araç sürünüyor, kafa kör noktayı kontrol ediyor, sinyal yanıp sönüyor, mesafe kapanıyor. 8 bölüme ayrılmış, klavyeyle gezilebiliyor (`←` `→`, `Boşluk` sesli anlatım).
-- **İnternetsiz çalışan anlatım** — 22 dakikalık Türkçe ses sayfanın içine base64 olarak gömülü. Cihazda Türkçe ses *varsa* tarayıcınınki kullanılıyor; yoksa gömülü kayıt devreye giriyor. Çalışma anında hiçbir şey indirilmiyor.
+- **51 ders, 8 bölüm** — her kural tek bir görselle anlatılıyor: 26'sında TfNSW'nin kendi videosundan yalnız o kuralı gösteren saniyeler sessiz döngüde, 25'inde SVG sahne (araç sürünüyor, kafa kör noktayı kontrol ediyor, sinyal yanıp sönüyor). Klavyeyle gezilebiliyor (`←` `→`, `Boşluk` sesli anlatım).
+- **Her derse Türkçe anlatım** — espeak-ng ile üretilmiş MP3'ler, ders anahtarına göre adlandırılmış. Cihazda Türkçe ses *varsa* tarayıcınınki kullanılıyor; yoksa hazır kayıt devreye giriyor.
 - **19 fail item** — puanın kaç olursa olsun testi bitiren ikili kurallar, her biri onu tetikleyen somut davranışla birlikte.
 - **Testin iptal edilmesi** — sürüşle ilgisi olmayan, test *başlamadan* bitiren kontroller (araç uygun değil, evrak eksik). Ücret iade edilmiyor.
 - **Skor kağıdı okuyucu** — Class C kağıdı (Form 1408) bir harf ızgarası. Harfe dokunun, memurun onu daire içine alarak ne demek istediğini öğrenin.
@@ -38,7 +38,8 @@ Bir de kitabın hiç cevaplamadığı soruyu cevaplıyor: *"Bu 19 maddeden hangi
 |---|---|
 | Sayfa | Tek statik HTML dosyası — framework yok, derleme adımı yok |
 | Grafik | Elle yazılmış satır içi SVG + CSS keyframe animasyonu |
-| Anlatım | espeak-ng (Türkçe), base64 MP3 olarak gömülü; cihazda ses varsa Web Speech API |
+| Anlatım | espeak-ng (Türkçe), ders başına MP3; cihazda ses varsa Web Speech API |
+| Video | Transport for NSW resmî videolarından ffmpeg ile kırpılmış 26 sessiz klip |
 | Servis | Docker içinde nginx:alpine, FTcom nginx ağ geçidinin arkasında |
 | Dağıtım | Docker Compose, yalnızca production |
 

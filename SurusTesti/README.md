@@ -1,6 +1,6 @@
 # NSW Sürüş Testi
 
-Transport for NSW's official 48-page **A Guide to the Driving Test** rebuilt as a Turkish, animated single page. 32 lessons, each with its own SVG scene and spoken narration — and the narration is **baked into the page**, so it speaks even on a device with no Turkish voice installed.
+Transport for NSW's official 48-page **A Guide to the Driving Test** rebuilt as a Turkish, animated single page. 51 lessons: 26 are silent loops cut from Transport for NSW's own videos, 25 are hand-drawn SVG scenes. Every one has Turkish narration, so it speaks even on a device with no Turkish voice installed.
 
 🇹🇷 Türkçe versiyon: [README.tr.md](README.tr.md)
 
@@ -23,7 +23,7 @@ It also answers the question the book never does: *"Which of these 19 things am 
 ## Features
 
 - **32 animated lessons** — each rule is a small SVG scene: the car creeps, the head checks the blind spot, the indicator blinks, the gap closes. Grouped into 8 chapters, navigable by keyboard (`←` `→`, `Space` to speak).
-- **Narration that works offline** — 22 minutes of Turkish audio is embedded in the page as base64. If the device *has* a Turkish voice the browser uses it; if not, the embedded track plays instead. Nothing is fetched at runtime.
+- **Narration for every lesson** — Turkish audio generated with espeak-ng, one MP3 per lesson. If the device *has* a Turkish voice the browser uses it; if not, the prepared track plays instead.
 - **The 19 fail items** — the binary rules that end a test regardless of score, each with the concrete behaviour that triggers it.
 - **Termination reasons** — the checks that end the test *before* it starts (unroadworthy car, missing paperwork), which are refunded to nobody.
 - **Score sheet reader** — the Class C sheet (Form 1408) is a grid of letters. Tap a letter to learn what the examiner meant by circling it.
@@ -38,7 +38,8 @@ It also answers the question the book never does: *"Which of these 19 things am 
 |---|---|
 | Page | One static HTML file — no framework, no build step |
 | Graphics | Hand-authored inline SVG with CSS keyframe animation |
-| Narration | espeak-ng (Turkish), embedded as base64 MP3; Web Speech API when a local voice exists |
+| Narration | espeak-ng (Turkish), one MP3 per lesson; Web Speech API when a local voice exists |
+| Video | 26 silent clips cut with ffmpeg from Transport for NSW's official videos |
 | Serving | nginx:alpine in Docker, behind the FTcom nginx gateway |
 | Deployment | Docker Compose, production only |
 
